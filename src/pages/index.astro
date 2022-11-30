@@ -11,12 +11,14 @@ import TopLogo from '@assets/images/TopLogo.png';
 		<ul role="list" class="link-card-list">
 			<Card
 			>
-				<>
-        <center>
-          <h2>対応タイトル</h2>
-        </center>
-          <p>ありがと</p>
-				</>
+        <>
+          <center>
+            <h2>対応タイトル</h2>
+          </center>
+          <ul class="play-title-list">
+
+          </ul>
+        </>
 			</Card>
 			<Card
 			><br/></Card>
@@ -35,12 +37,15 @@ import TopLogo from '@assets/images/TopLogo.png';
 		padding-left: 0.5rem;
 		padding-bottom: 1.5rem;
 	}
+  h2{
+		font-size: 1.5rem;
+    color: rgb(var(--headline));
+	}
 	.link-card-list {
 		margin-top: 2rem;
 		padding: 0;
 	}
-	h2{
-		font-size: 1.5rem;
-    color: --accent;
-	}
+  .play-title-list{
+    display: grid;
+  }
 </style>

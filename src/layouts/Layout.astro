@@ -21,8 +21,11 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--primary-background: #eff0f3;
+		--secondary-background: #fffffe;
+		--headline:#0d0d0d;
+		--paragraph:#2a2a2a;
+		--accsent: #ff8e3c;
 	}
 	html {
 		font-family: "Helvetica Neue",
@@ -31,6 +34,6 @@ const { title } = Astro.props;
     				"Hiragino Sans",
     				Meiryo,
     				sans-serif;
-		background-color: #eff0f3;
+		background-color: var(--primary-background);
 	}
 </style>
