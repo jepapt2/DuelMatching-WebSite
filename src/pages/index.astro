@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import TopLogo from '@assets/images/TopLogo.png';
+---
+
+<Layout title="DuelMatching">
+	<main>
+		<img src={TopLogo}>
+		<article>
+		<ul role="list" class="link-card-list">
+			<Card
+			>
+				<>
+        <center>
+          <h2>対応タイトル</h2>
+        </center>
+          <p>ありがと</p>
+				</>
+			</Card>
+			<Card
+			><br/></Card>
+		</ul>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		max-width: 80ch;
+	}
+	article{
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+		padding-bottom: 1.5rem;
+	}
+	.link-card-list {
+		margin-top: 2rem;
+		padding: 0;
+	}
+	h2{
+		font-size: 1.5rem;
+    color: --accent;
+	}
+</style>

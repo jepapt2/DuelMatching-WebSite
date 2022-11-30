@@ -1,0 +1,21 @@
+---
+export interface Props {
+	children: HTMLElement;
+
+}
+
+---
+
+<li class="card">
+	<slot />
+</li>
+<style>
+	.card {
+		list-style: none;
+		padding: 1rem;
+		background-color: white;
+		border-radius: 0.5rem;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		margin-bottom: 1.5rem;
+	}
+</style>
