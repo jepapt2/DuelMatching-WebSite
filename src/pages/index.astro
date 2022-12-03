@@ -2,6 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import TopLogo from '@assets/images/TopLogo.png';
+import TopProfile from '@assets/images/TopProfile.png';
+import TopRecruit from '@assets/images/TopRecruit.png';
+import TopUsers from '@assets/images/TopUsers.png';
+import TopChat from '@assets/images/TopChat.png';
+import { playTitle } from 'src/resouces/playTitle';
+import AppStoreBadge from '@components/AppStoreBadge.astro';
+import GooglePlayBadge from '@components/GooglePlayBadge.astro';
+import ModalCard from '@components/ModalCard';
+import TwitterTimeline from '@components/TwitterTimeline.astro';
 ---
 
 <Layout title="DuelMatching">
@@ -9,19 +18,41 @@ import TopLogo from '@assets/images/TopLogo.png';
 		<img src={TopLogo}>
 		<article>
 		<ul role="list" class="link-card-list">
+      <Card
+			>
+        <center>
+          <AppStoreBadge/>
+          <GooglePlayBadge/>
+        </center>
+      </Card>
 			<Card
 			>
         <>
-          <center>
+          <center class="wrap">
             <h2>対応タイトル</h2>
-          </center>
-          <ul class="play-title-list">
-
+          <ul class="play-title-list grid xs:grid-cols-1 md:grid-cols-2 md:max-w-[80%]">
+            {playTitle.map((title) => <><li class="play-title-item">{title}</li></>)}
           </ul>
+        </center>
         </>
 			</Card>
-			<Card
-			><br/></Card>
+      <li class="grid grid-cols-2 gap-2">
+        <ModalCard footerText="充実したプロフィール" image={TopProfile} client:load/>
+        <ModalCard footerText="対戦募集機能" image={TopRecruit} client:load/>
+        <ModalCard footerText="気が合う仲間を探そう" image={TopUsers} client:load/>
+        <ModalCard footerText="複数人対応のチャット" image={TopChat} client:load/>
+      </li>
+      <li>
+        <TwitterTimeline />
+      </li>
+      <div class="h-6"/>
+      <li>
+        <Card>
+          <center>
+            <a href="/tos">利用規約</a>
+          </center>
+        </Card>
+      </li>
 		</ul>
 		</article>
 	</main>
@@ -38,14 +69,29 @@ import TopLogo from '@assets/images/TopLogo.png';
 		padding-bottom: 1.5rem;
 	}
   h2{
-		font-size: 1.5rem;
-    color: rgb(var(--headline));
+		font-size: 1.2rem;
+    color: var(--headline);
+    margin-bottom: 0.5rem;
 	}
 	.link-card-list {
 		margin-top: 2rem;
 		padding: 0;
 	}
   .play-title-list{
-    display: grid;
+    padding-left: 2rem;
+    text-align:left
+  }
+
+  .play-title-item{
+    display: inline-block;
+    width: 15rem;
+    font-size: 1rem;
+    color: var(--paragraph);
+  }
+
+   .play-title-item::before{
+    content: "●";
+    color: var(--headline);
+    margin-right: 0.3rem;
   }
 </style>
