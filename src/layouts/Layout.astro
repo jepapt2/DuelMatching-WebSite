@@ -1,4 +1,7 @@
 ---
+import { playTitle } from 'src/resouces/playTitle';
+import TopLogo from '@assets/images/TopLogo.png';
+
 export interface Props {
 	title: string;
 }
@@ -11,8 +14,18 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/logo192.png" />
+		<meta
+      		name="description"
+      	content={`国内唯一のTCGマッチングアプリ!対応タイトル:${playTitle.join(',')}`}
+    		/>
 		<meta name="generator" content={Astro.generator} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@DuelMatching" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={`国内唯一のTCGマッチングアプリ!対応タイトル:${playTitle.join(',')}`} />
+		<meta name="twitter:image" content={TopLogo} />
 		<title>{title}</title>
 	</head>
 	<body>
