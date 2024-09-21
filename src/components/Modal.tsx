@@ -37,11 +37,13 @@ const Modal: FC<Props> = ({ closeModal, children, footerText }) => {
             {/*body*/}
             <div className="relative flex-auto">{children}</div>
             {/*footer*/}
-            <div className="items-center p-4 border-t border-solid border-slate-200 rounded-b">
-              <center>
-                <h1 style={modalText}>{footerText}</h1>
-              </center>
-            </div>
+            {footerText && (
+              <div className="items-center p-4 border-t border-solid border-slate-200 rounded-b">
+                <center>
+                  <h1 style={modalText}>{footerText}</h1>
+                </center>
+              </div>
+            )}
           </div>
         </div>
       </div>
